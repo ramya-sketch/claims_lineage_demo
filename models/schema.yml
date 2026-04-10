@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: claims_lineage_source
+    database: DQLABS_QA
+    schema: ZTEST
+    tables:
+      - name: CLAIM
+      - name: CLAIM_TX
