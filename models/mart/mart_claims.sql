@@ -19,6 +19,6 @@ select
     t.TX_TYPE,
     t.TX_CATEGORY
 
-from {{ ref('stg_claim') }} c
+from {{ ref('stg_claims') }} c
 left join {{ ref('stg_claim_tx') }} t
     on c.CLAIM_ID = t.CLAIM_ID
