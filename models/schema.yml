@@ -4,6 +4,49 @@ sources:
   - name: claims_lineage_source
     database: DQLABS_QA
     schema: ZTEST
+
     tables:
       - name: CLAIM
+        description: "Raw claims header table"
+        
+        columns:
+          - name: CLAIM_ID
+            tests:
+              - not_null
+              - unique
+
+          - name: STATUS
+            tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: ['OPEN', 'CLOSED', 'PENDING']
+
+          - name: POLICY_NUMBER
+            tests:
+              - not_null
+
+          - name: CLAIM_DATE
+            tests:
+              - not_null
+
       - name: CLAIM_TX
+        description: "Raw claim transactions table"
+
+        columns:
+          - name: TX_ID
+            tests:
+              - not_null
+              - unique
+
+          - name: CLAIM_ID
+            tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('claims_lineage_source', 'CLAIM')
+                    field: CLAIM_ID
+
+          - name: TX_DATE
+            tests:
+              - not_null
