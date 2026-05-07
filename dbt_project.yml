@@ -22,12 +22,7 @@ models:
 
     staging:
       +materialized: view
-      +schema: STAGING
 
     mart:
       +materialized: table
-      +schema: STAGING
       +transient: false
-
-seeds:
-  +schema: STAGING
