@@ -20,6 +20,11 @@ models:
   claim_lineage_demo:
     staging:
       +materialized: view
+      +schema: STAGING 
     mart:
       +materialized: table
+      +schema: STAGING 
+seeds:
+  claim_lineage_demo:
+    +schema: STAGING      
   
