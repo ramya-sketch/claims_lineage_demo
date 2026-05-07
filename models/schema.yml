@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: claims_lineage_source
-    database: DQLABS_QA
-    schema: ZTEST
+    database: PRIZM_QA
+    schema: DBT_RM
 
     tables:
       - name: CLAIM

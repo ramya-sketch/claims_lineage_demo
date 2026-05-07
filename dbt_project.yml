@@ -12,19 +12,22 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
 target-path: "target"
+
 clean-targets:
   - "target"
   - "dbt_packages"
 
 models:
   claim_lineage_demo:
+
     staging:
       +materialized: view
-      +schema: STAGING 
+      +schema: STAGING
+
     mart:
       +materialized: table
-      +schema: STAGING 
+      +schema: STAGING
+      +transient: false
+
 seeds:
-  claim_lineage_demo:
-    +schema: STAGING      
-  
+  +schema: STAGING
