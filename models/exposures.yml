@@ -9,7 +9,7 @@ exposures:
     config:
       tags: ["claims", "insurance", "gold", "tableau"]
 
-    url: http://dqlabs-tableauserver.eastus.cloudapp.azure.com/#site/Default/views/ClaimsWorkbook/ClaimsDashboard
+    url: http://dqlabs-tableauserver.eastus.cloudapp.azure.com/#/views/ClaimsWorkbook/ClaimsDashboard
 
     description: |
       Tableau dashboard visualizing claims and transaction analytics
@@ -17,8 +17,6 @@ exposures:
 
     depends_on:
       - ref('mart_claims')
-      - ref('stg_claims')
-      - ref('stg_claim_tx')
 
     owner:
       name: Data & Analytics Team
