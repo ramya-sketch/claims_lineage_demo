@@ -3,7 +3,6 @@
 select
     -- CLAIM table
     c.CLAIM_ID,
-    c.CLAIM_NUMBER,
     c.POLICY_NUMBER,
     c.CLAIM_DATE,
     c.CLAIM_TYPE,
