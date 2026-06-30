@@ -8,7 +8,6 @@ select
     c.CLAIM_DATE,
     c.CLAIM_TYPE,
     c.STATE,
-    c.STATUS,
     c.REPORTED_DATE,
     c.ACCIDENT_DATE,
 
